@@ -4,10 +4,10 @@ def check_guess(answer,guess)
     puts "You win, you must have cheated.\n\n"
     exit
   elsif guess > answer
-    puts "Guess a greater number.\n\n"
+    puts "Guess a Lower number.\n\n"
 
   else
-    puts "Guess a lower number.\n\n"
+    puts "Guess a Greater number.\n\n"
   end
 end
 
@@ -16,7 +16,7 @@ def dup_check(guesses)
   counter = guesses.count-1
   counter.times do |counter|
     if guesses.last == guesses[counter]
-      puts "You guessed #{guesses.last}. I think if you try it one more time it will work.\n\n"
+      puts "You guessed #{guesses.last}. I think if you try it one more time it will work.\n"
       break
     end
   end
@@ -28,12 +28,11 @@ def guess_accuracy(guesses, answer)
   counter = guesses.count-1
   counter.times do |counter|
     if guesses.last < guesses[counter] && answer > guesses[counter]
-      puts "Is #{guesses.last} greater than the #{guesses[counter]} you tried on your #{numbers[counter]} guess?\n\n"
+      puts "Is #{guesses.last} greater than the #{guesses[counter]} you tried on your #{numbers[counter]} guess?\n"
       break
     elsif guesses.last > guesses[counter] && answer < guesses[counter]
-      puts "Is #{guesses.last} less than the #{guesses[counter]} you tried on your #{numbers[counter]} guess?\n\n"
+      puts "Is #{guesses.last} less than the #{guesses[counter]} you tried on your #{numbers[counter]} guess?\n"
       break
-
     end
   end
 end
@@ -41,13 +40,13 @@ end
 try = 0
 guesses = []
 # pick a random number
-answer = rand(1..100)
-#answer = now.seconds.
+#answer = rand(1..100)
+answer = (1..100).to_a.sample
+puts "Guess my number(1 thru 100): "
 
 (0..4).each do |try|
-  # get guess
-  puts "Guess my number(1 thru 100): "
   # puts "This is the answer: #{answer}"
+  # get guess
   guesses << gets.chomp.to_i
   if guesses.count != 1
     dup_check(guesses)
