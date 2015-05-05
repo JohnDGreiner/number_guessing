@@ -17,8 +17,8 @@ def dup_check(guesses)
     counter = guesses.count-1
     counter.times do |counter|
       if guesses.last == guesses[counter]
-        puts "You entered #{guesses.last} twice. This game is too difficult for you. Goodbye.\n\n"
-        exit
+        puts "You guessed #{guesses.last}. I think if you try it one more time it will work.\n\n"
+        break
       end
     end
   end
@@ -32,7 +32,7 @@ answer = rand(1..100)
 (0..4).each do |try|
   # get guess
   puts "Guess my number: "
-  puts "This is the answer: #{answer}"
+  #puts "This is the answer: #{answer}"
   guesses << gets.chomp.to_i
   dup_check(guesses)
   check_guess(answer,guesses[try])
