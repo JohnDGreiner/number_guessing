@@ -4,10 +4,9 @@ def check_guess(answer,guess)
     puts "You win, you must have cheated.\n\n"
     exit
   elsif guess > answer
-    puts "Guess a Lower number.\n\n"
-
+    puts "My number is Lower.\n\n"
   else
-    puts "Guess a Greater number.\n\n"
+    puts "My number is Greater.\n\n"
   end
 end
 
