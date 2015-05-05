@@ -46,7 +46,7 @@ answer = rand(1..100)
 
 (0..4).each do |try|
   # get guess
-  puts "Guess my number: "
+  puts "Guess my number(1 thru 100): "
   # puts "This is the answer: #{answer}"
   guesses << gets.chomp.to_i
   if guesses.count != 1
